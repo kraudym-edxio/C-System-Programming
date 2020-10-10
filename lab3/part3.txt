@@ -1,0 +1,8 @@
+The reason why ch != EOF is always true 
+when using unsigned char in filesize1v.c
+is because unsigned char does not undergo
+promotion. It will always be a smaller 
+value than the value of EOF. Since the value
+will always be smaller, ch and EOF can never 
+be equal. This is why the do while loop gets
+executed and infinite amount of times. 

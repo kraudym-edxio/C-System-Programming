@@ -1,0 +1,149 @@
+Script started on 2020-09-28 12:39:34-04:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="102" LINES="29"]
+[1;91;86m[bravo][1;91;230m • [0mgdb -tui c[K./copy
+[?1049h[22;0;0t[1;29r(B[m[4l[?7h[?1h=[H[2J[20d(B[0;7mNone No process In:                                                                      L??   PC: ?? [21;1H(B[m[H   (0[0mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk(B[2;4H(0[0mx(B[102G(0[0mx(B[3;4H(0[0mx(B[102G(0[0mx(B[4;4H(0[0mx(B[102G(0[0mx(B[5;4H(0[0mx(B[102G(0[0mx(B[6;4H(0[0mx(B[102G(0[0mx(B[7;4H(0[0mx(B[102G(0[0mx(B[8;4H(0[0mx(B[102G(0[0mx(B[9;4H(0[0mx(B[102G(0[0mx(B[10;4H(0[0mx(B[102G(0[0mx(B[11;4H(0[0mx(B[102G(0[0mx(B[12;4H(0[0mx(B[102G(0[0mx(B[13;4H(0[0mx(B[102G(0[0mx(B[14;4H(0[0mx(B[102G(0[0mx(B[15;4H(0[0mx(B[102G(0[0mx(B[16;4H(0[0mx(B[102G(0[0mx(B[17;4H(0[0mx(B[102G(0[0mx(B[18;4H(0[0mx(B[102G(0[0mx(B[19;4H(0[0mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj(B[1;4H(0[0m(B[10;29H[ No Source Available ][10;29H[23X[H   [10;29H[ No Source Available ][H[10;52H[?1h=[21d[H[2J   (0[0mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk(B[2;4H(0[0mx(B[102G(0[0mx(B[3;4H(0[0mx(B[102G(0[0mx(B[4;4H(0[0mx(B[102G(0[0mx(B[5;4H(0[0mx(B[102G(0[0mx(B[6;4H(0[0mx(B[102G(0[0mx(B[7;4H(0[0mx(B[102G(0[0mx(B[8;4H(0[0mx(B[102G(0[0mx(B[9;4H(0[0mx(B[102G(0[0mx(B[10;4H(0[0mx(B[10;29H(0[0m(B[ No Source Available ][102G(0[0mx(B[11;4H(0[0mx(B[102G(0[0mx(B[12;4H(0[0mx(B[102G(0[0mx(B[13;4H(0[0mx(B[102G(0[0mx(B[14;4H(0[0mx(B[102G(0[0mx(B[15;4H(0[0mx(B[102G(0[0mx(B[16;4H(0[0mx(B[102G(0[0mx(B[17;4H(0[0mx(B[102G(0[0mx(B[18;4H(0[0mx(B[102G(0[0mx(B[19;4H(0[0mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj(B[20;1H(0[0m(B[0;7mNone No process In:                                                                      L??   PC: ?? [1;1H(B[m[10;52H[20d[H   (0[0;1;7mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk(B(B[m[2;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[3;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[4;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[5;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[6;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[7;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[8;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[9;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[10;4H(0[0;1;7mx(B(B[m[10;29H(0[0;1;7m(B(B[m[23X[102G(0[0;1;7mx(B(B[m[11;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[12;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[13;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[14;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[15;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[16;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[17;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[18;4H(0[0;1;7mx(B(B[m[102G(0[0;1;7mx(B(B[m[19;4H(0[0;1;7mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj(B(B[m[1;4H(0[0;1;7m(B(B[m[10;29H[ No Source Available ][H[21dGNU gdb (Debian 8.2.1-2+b3) 8.2.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+--Type <RET> for more, q to quit, c to continue without paging--[J[21d--Type <RET> for more, q to quit, c to continue without paging--
+For bug reporting instructions, please see:[K
+<http://www.gnu.org/software/gdb/bugs/>.[K
+Find the GDB manual and other documentation resources online at:[K
+    <http://www.gnu.org/software/gdb/documentation/>
+[K
+For help, type "help".[K
+[7Gapropos word" to search for commands related to "word"...
+Reading symbols from ./copy...[21d[M[28;31Hdone.
+[1;7H(B[0;1;7mcopy.c
+[5G(B[m6[13Gint main (int argc, char *argv[]) {
+[5G7
+8[4;21Hint fd1, fd2;
+[5G9[5;21Hchar buffer[100];
+[5G10[6;21Hlong int n1;
+[5G11
+12[8;21Hif (((fd1 = open(argv[1], O_RDONLY)) == -1) || ((fd2 = open(argv[2], O_CREAT|O_WR
+[5G13[9;29Hperror("File problem ");
+[5G14[10;29Hexit(1);[15X
+[5G15[11;21H}
+[5G16
+17[13;21Hwhile ((n1 = read(fd1, buffer, 512) > 0)) {
+[5G18
+19[15;29Hif (write(fd2, buffer, n1) != n1) {
+[5G20[16;37Hperror("Writing problem ");
+[5G21[17;37Hexit(3);
+[5G22[18;29H}[1;13H[19d
+(B[0;7mexec
+(B[m[1;13H[19d
+
+[29d(gdb) b 17[H[13db+[19d
+
+[2M[28dBreakpoint 1 at 0x123b: file copy.c, line 17.
+(gdb) r copy.c compy   py.bak[21d[2M[28dStarting program: /home/kraudym/fall2020/comp2560/lab2/copy copy.c copy.bak
+[1;13H[13d  [H[13db+[19d
+(B[0;7mnative process 31398 In:
+(B[m[29d[1;13H[13d  [H[13db+[19d
+
+[29d[1;13H[13d  [H[13db+[19d
+
+[29d[13d  [H[13dB+[19d
+
+[2M[28dBreakpoint 1, main (argc=3, argv=0x7fffffffe3e8) at copy.c:17
+[20;26H(B[0;7mmain[20;78HL17   PC: 0x55555555523b
+(B[m[13;5H(B[0;7m17              while ((n1 = read(fd1, buffer, 512) > 0)) {[102G(B[m  [H[13dB+>[19d[29d(gdb) p f1 d1[21d[M[29d$1 = 3[21d[M[29d(gdb) p fd2[21d[M[29d$2 = 4[21d[M[29d(gdb) p n1[21d[M[29d$3 = 140737488348128[21d[M[29d(gdb) n[21d[M[29d[20;80H(B[0;7m9[100G0a
+(B[m[13;5H17[14X[13;21Hwhile ((n1 = read(fd1, buffer, 512) > 0)) {
+
+[5G(B[0;7m19                      if (write(fd2, buffer, n1) != n1) {[102G(B[m[13d   [H[13dB+
+
+>
+
+
+
+[29d(gdb) p f1 d1[21d[M[29d$4 = 539767140[21d[M[29d(gdb) p fd2[21d[M[29d$5 = 1713402990[21d[M[29d(gdb) p n1[21d[M[29d$6 = 1[21d[M[29d(gdb) n[21d[M[29d[20;79H(B[0;7m20[100G25
+(B[m[15;5H19[22X[15;29Hif (write(fd2, buffer, n1) != n1) {
+[5G(B[0;7m20                              perror("Writing problem ");  [102G(B[m[13d  
+
+ [H[13dB+
+
+
+>
+
+
+[29d(gdb) n[21d[M[29dWriting problem : Bad file descriptor
+[20;80H(B[0;7m1[100G31
+(B[m[2;18r[18;1H[8S[1;29r[5;1H  
+
+
+ (0[0;1;7mx(B(B[m20[30X[8;37Hperror("Writing problem ");  
+[5G(B[0;7m21                              exit(3);
+
+[4G(0[0;1;7mx(B(B[m23[102G(0[0;1;7mx(B(B[m[12;4H(0[0;1;7mx(B(B[m24[12;21H}[102G(0[0;1;7mx(B(B[m[13;1H(0[0;1;7m(B(B[mB+ (0[0;1;7mx(B(B[m25[102G(0[0;1;7mx(B(B[m[14;4H(0[0;1;7mx(B(B[m26[14;21H// Case of an error exit from the loop[102G(0[0;1;7mx(B(B[m[15;4H(0[0;1;7mx(B(B[m27[15;21Hif (n1 == -1) {[102G(0[0;1;7mx(B(B[m[16;3H(0[0;1;7m(B(B[m>(0[0;1;7mx(B(B[m28[16;29Hperror("Reading problem ");[102G(0[0;1;7mx(B(B[m[17;4H(0[0;1;7mx(B(B[m29[17;29Hexit(2);[102G(0[0;1;7mx(B(B[m[18;4H(0[0;1;7mx(B(B[m30[18;21H}[102G(0[0;1;7mx(B(B[m[1;13H(0[0;1;7m(B(B[m[13d  
+
+
+ [H
+
+
+
+B+
+
+
+
+>[19d[5d  
+
+
+
+ [H
+
+
+
+B+
+
+
+
+>[19d[29d(gdb) n[21d[M[29d[21d[M[28d[Inferior 1 (process 31398) exited with code 03]
+[20;8H(B[0;7mNo process In: main   
+(B[m[20;23H(B[0;7m    [20;78H            L??   PC: ??
+(B[m[2;5H  [2;29H        
+[5G  [3;21H 
+[5G  
+  [5;21H[43X
+[5G  
+  [7;29H[35X
+[5G  [8;37H[27X
+[5G[40X
+  [10;29H 
+[5G  
+  [12;21H 
+[5G  
+  [14;21H[38X
+[5G  [15;21H[15X
+[5G  [16;29H[27X
+[5G  [17;29H        
+[5G  [18;21H [1;13H[10;29H[ No Source Available ][5d  
+
+
+
+ [H[19d[2;5H6[13Gint main (int argc, char *argv[]) {
+[5G7
+8[4;21Hint fd1, fd2;
+[5G9[5;21Hchar buffer[100];
+[5G10[6;21Hlong int n1;
+[5G11
+12[8;21Hif (((fd1 = open(argv[1], O_RDONLY)) == -1) || ((fd2 = open(argv[2], O_CREAT|O_WR
+[5G13[9;29Hperror("File problem ");
+[5G14[10;29Hexit(1);[15X
+[5G15[11;21H}
+[5G16
+17[13;21Hwhile ((n1 = read(fd1, buffer, 512) > 0)) {
+[5G18
+19[15;29Hif (write(fd2, buffer, n1) != n1) {
+[5G20[16;37Hperror("Writing problem ");
+[5G21[17;37Hexit(3);
+[5G22[18;29H}[1;13H[13dB+[19d
+
+[29d(gdb) q[29;1H[?1049l[23;0;0t[?1l>[1;91;86m[bravo][1;91;230m • [0mexit
+exit
+
+Script done on 2020-09-28 12:41:03-04:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,4 @@
+A file descriptor may be corrupted when incorrect information
+is written to a file or written to the wrong place. This confusion
+can cause important data to be altered, thus corrupting the file
+descriptor. 

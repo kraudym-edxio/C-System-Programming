@@ -1,0 +1,36 @@
+Script started on 2020-10-07 21:54:08-04:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="98" LINES="33"]
+[1;91;86m[charlie][1;91;230m • [0mvi lseekSize.c
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;33r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[33;1H"lseekSize.c" 16L, 329C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m<unistd.h>[m
+[93m  2 [m[38;5;81m#include [m[95m<fcntl.h>[m
+[93m  3 [m[38;5;81m#include [m[95m<stdio.h>[m
+[93m  4 
+  5 [m[38;5;121mint[m main ([38;5;121mint[m argc, [38;5;121mchar[m *argv[]) {
+[93m  6 
+  7 [m[8C[96m//Open the file for reading only[m
+[93m  8 [m[8C[38;5;121mint[m fd1 = open(argv[[95m1[m], O_RDONLY);
+[93m  9 
+ 10 [m[8C[38;5;121mint[m fileSize = lseek(fd1, [95m0[m, [95mSEEK_END[m); [96m//Determine fileSize using lseek[m
+[93m 11 [m[8Cprintf([95m"The size of the file is: [m[38;5;224m%d[m[95m.[m[38;5;224m\n[m[95m"[m, fileSize);
+[93m 12 
+ 13 [m[8C[96m//Close the file[m
+[93m 14 [m[8Cclose(fd1);
+[93m 15 
+ 16 [m}
+[94m~                                                                                                 [18;1H~                                                                                                 [19;1H~                                                                                                 [20;1H~                                                                                                 [21;1H~                                                                                                 [22;1H~                                                                                                 [23;1H~                                                                                                 [24;1H~                                                                                                 [25;1H~                                                                                                 [26;1H~                                                                                                 [27;1H~                                                                                                 [28;1H~                                                                                                 [29;1H~                                                                                                 [30;1H~                                                                                                 [31;1H~                                                                                                 [32;1H~                                                                                                 [m[33;81H1,1[11CAll[1;5H[?25h[?25l[33;1H[K[33;1H:[?2004h[?25hx[?25l[?25h[?25l[33;2H[K[33;2H[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[33;1H[K[33;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[charlie][1;91;230m • [0mcc -[KlseekSize.c -o le[KseekSize
+[1;91;86m[charlie][1;91;230m • [0m./[K[Kls -lt
+total 40
+-rwxr-xr-x 1 kraudym temp 16760 Oct  7 21:54 [0m[96;1;3mlseekSize[0m
+-rw-r--r-- 1 kraudym temp     0 Oct  7 21:54 [97mq1_timing.t[0m
+-rw-r--r-- 1 kraudym temp     0 Oct  7 21:54 [97mq1.txt[0m
+-rw-r--r-- 1 kraudym temp   122 Oct  7 21:49 [97mappend.c[0m
+-rwxr-xr-x 1 kraudym temp    45 Oct  7 21:34 [96;1;3mlist1.txt[0m
+-rwxr-xr-x 1 kraudym temp 16712 Oct  7 21:32 [96;1;3mwriter[0m
+-rw-r--r-- 1 kraudym temp   311 Oct  7 21:32 [97mwriter.c[0m
+-rw-r--r-- 1 kraudym temp   100 Oct  7 20:55 [97mlineCount.c[0m
+-rw-r--r-- 1 kraudym temp   329 Oct  7 20:31 [97mlseekSize.c[0m
+[1;91;86m[charlie][1;91;230m • [0m./list1.txt [K[K[K[K[K[K[K[K[KseekSize list1.txt 
+The size of the file is: 45.
+[1;91;86m[charlie][1;91;230m • [0mexit
+exit
+
+Script done on 2020-10-07 21:55:07-04:00 [COMMAND_EXIT_CODE="0"]

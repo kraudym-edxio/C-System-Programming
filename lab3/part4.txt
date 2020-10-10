@@ -1,0 +1,16 @@
+A) The file size reported by OS for this file is 351 bytes.
+
+B) fseek(fd, 10L, SEEK_SET) acts as a pointer to the first 10
+   characters at the beginning of the file- beginning of file is
+   specified by SEEK_SET.
+
+C) The file size reported by running ./filesize2 filesize2.c 
+   is 10 bytes. This reported size is different from the size
+   in part a) because uncommenting 
+		
+	fseek(fd, 10L, SEEK_SET); 
+	putc(-1, fd);
+	rewind(fd); 
+	
+  will cause ONLY the first ten charactes to be considered, hence 
+  the file size will only be ten bytes. 

@@ -1,0 +1,53 @@
+Script started on 2020-10-07 23:38:32-04:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="88" LINES="28"]
+[1;91;86m[charlie][1;91;230m • [0mlw
+bash: lw: command not found
+[1;91;86m[charlie][1;91;230m • [0mls
+[0m[96;1;3mappend[0m     [97mlineCount.c[0m  [97mlseekSize.c[0m  [97mq1_timing.t[0m  [97mq2.txt[0m       [97mq7_timing.t[0m  [96;1;3mwriter[0m
+[97mappend.c[0m   [96;1;3mlist1.txt[0m    [96;1;3mmycat[0m        [97mq1.txt[0m       [97mq3_timing.t[0m  [97mq7.txt[0m       [97mwriter.c[0m
+[96;1;3mlineCount[0m  [96;1;3mlseekSize[0m    [97mmycat.c[0m      [97mq2_timing.t[0m  [97mq3.txt[0m       [97msample.txt[0m
+[1;91;86m[charlie][1;91;230m • [0mvi lineCount.c
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;28r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[28;1H"lineCount.c" 22L, 312C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m<unistd.h>[m
+[93m  2 [m[38;5;81m#include [m[95m<fcntl.h>[m
+[93m  3 [m[38;5;81m#include [m[95m<stdio.h>[m
+[93m  4 
+  5 [m[38;5;121mint[m main ([38;5;121mint[m argc, [38;5;121mchar[m *argv[]) {
+[93m  6 
+  7 [m[8C[38;5;121mint[m fd;
+[93m  8 [m[8C[38;5;121mchar[m c;
+[93m  9 [m[8C[38;5;121mint[m lineCount = [95m0[m;
+[93m 10 
+ 11 [m[8Cfd = open(argv[[95m1[m], O_RDONLY, [38;5;81m0[m[95m777[m);
+[93m 12 
+ 13 [m[8C[93mwhile[m((read(fd, &c, [95m1[m)) != [95m0[m) {
+[93m 14 
+ 15 [m[16C[93mif[m (c == [38;5;224m'\n'[m) {
+[93m 16 [m[24ClineCount++;
+[93m 17 [m[16C}
+[93m 18 [m[8C}
+[93m 19 
+ 20 [m[8Cprintf([95m"The program contains [m[38;5;224m%d[m[95m lines.[m[38;5;224m\n[m[95m"[m, lineCount);
+[93m 21 
+ 22 [m}
+[94m~                                                                                       [24;1H~                                                                                       [25;1H~                                                                                       [26;1H~                                                                                       [27;1H~                                                                                       [m[28;71H1,1[11CAll[1;5H[?25h[?25l[28;1H[K[28;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[28;1H[K[28;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[charlie][1;91;230m • [0mvi sample.txt 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;28r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[28;1H"sample.txt" 13L, 56C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [mHello World!
+[93m  2 [mMy name is
+[93m  3 [mEdxio
+[93m  4 [mKraudy
+[93m  5 [mC
+[93m  6 [mO
+[93m  7 [mM
+[93m  8 [mP
+[93m  9 [mU
+[93m 10 [mT
+[93m 11 [mE
+[93m 12 [mR
+[93m 13 [mS
+[94m~                                                                                       [15;1H~                                                                                       [16;1H~                                                                                       [17;1H~                                                                                       [18;1H~                                                                                       [19;1H~                                                                                       [20;1H~                                                                                       [21;1H~                                                                                       [22;1H~                                                                                       [23;1H~                                                                                       [24;1H~                                                                                       [25;1H~                                                                                       [26;1H~                                                                                       [27;1H~                                                                                       [m[28;71H1,1[11CAll[1;5H[?25h[?25l[28;1H[K[28;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[28;1H[K[28;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[charlie][1;91;230m • [0mcc lineC`[Kount.c -o lineCount
+[1;91;86m[charlie][1;91;230m • [0m./lineCount sample.txt 
+The program contains 13 lines.
+[1;91;86m[charlie][1;91;230m • [0m./[K[K./lineCount sample.txt [K[K[K[K[K[K[K[K[K[K[KlineCount.c
+The program contains 22 lines.
+[1;91;86m[charlie][1;91;230m • [0mexit
+exit
+
+Script done on 2020-10-07 23:39:32-04:00 [COMMAND_EXIT_CODE="0"]
