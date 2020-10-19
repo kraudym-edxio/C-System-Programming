@@ -1,0 +1,64 @@
+Script started on 2020-10-19 12:24:00-04:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="90" LINES="28"]
+[1;91;86m[charlie][1;91;230m • [0mcat s[Kappend.c
+/**
+	Name: Edxio Kraudy Mora
+	Date: October 19, 2020
+	Student ID: 110006224
+*/
+
+#include <stdio.h>
+
+int main (int argc, char *argv[]) {
+
+	FILE *f1, *f2, *f3, *f4;
+	char c;
+
+	f1 = fopen(argv[1], "r");
+	f2 = fopen(argv[2], "r");
+	f3 = fopen(argv[3], "r");
+	f4 = fopen(argv[4], "w");
+	
+	do {
+		c = getc(f1);
+		fputc(c, f4);
+
+	} while (c != EOF);
+
+	do {
+		c = getc(f2);
+		fputc(c, f4);
+
+	} while (c != EOF);
+
+	do {
+		c = getc(f3);
+		fputc(c, f4);
+
+	} while (c != EOF);
+
+
+	fclose(f1);
+	fclose(f2);
+	fclose(f3);
+	fclose(f4);
+
+}
+[1;91;86m[charlie][1;91;230m • [0mcc appendn[K.c -o append
+[1;91;86m[charlie][1;91;230m • [0mvi[K[K[H[2J[1;91;86m[charlie][1;91;230m • [0mls
+[0m[96;1;3mappend[0m  [97mappend.c[0m  [97mappend.t[0m  [97mappend.txt[0m  [97mfinal.txt[0m  [97mtest2.txt[0m  [97mtest3.txt[0m  [97mtest.txt[0m
+[1;91;86m[charlie][1;91;230m • [0mrm re[K[Kfinal.txt 
+[1;91;86m[charlie][1;91;230m • [0mcat test.txt
+Hello World I am Edxio
+[1;91;86m[charlie][1;91;230m • [0mcat test2.txt
+This is a test
+[1;91;86m[charlie][1;91;230m • [0mcat test3.txt
+This is simply another test file
+[1;91;86m[charlie][1;91;230m • [0mcat test3.txt2.txt[1P.txtrm final.txt [1Pcat test.txt2.txt3.txt[K./apeend [K[K[K[K[Kpemnd [K[K[K[Knd test.txt test2.txt test3.txt final.txt
+[1;91;86m[charlie][1;91;230m • [0mcat final.c[Ktxt
+Hello World I am Edxio
+�This is a test
+�This is simply another test file
+�[1;91;86m[charlie][1;91;230m • [0mexit
+exit
+
+Script done on 2020-10-19 12:25:15-04:00 [COMMAND_EXIT_CODE="0"]
