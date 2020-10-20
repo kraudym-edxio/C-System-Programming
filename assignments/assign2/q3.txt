@@ -1,0 +1,66 @@
+Script started on 2020-10-19 20:56:39-04:00 [TERM="xterm-256color" TTY="/dev/pts/16" COLUMNS="204" LINES="55"]
+[1;91;86m[alpha][1;91;230m • [0mvi reverseFile.c
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;55r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[55;1H"reverseFile.c" 40L, 473C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m<stdio.h>[m
+[93m  2 
+  3 [m[38;5;121mint[m main ([38;5;121mint[m argc, [38;5;121mchar[m *argv[]) {
+[93m  4 
+  5 [m[8C[38;5;121mFILE[m *fd1, *fd2;
+[93m  6 
+  7 [m[8C[38;5;121mlong[m arr[[95m100[m];
+[93m  8 [m[8C[38;5;121mchar[m buffer[[95m100[m];
+[93m  9 [m[8C[38;5;121mint[m x = [95m1[m;
+[93m 10 
+ 11 [m[8Cfd1 = fopen(argv[[95m1[m], [95m"r"[m);
+[93m 12 [m[8Cfd2 = fopen(argv[[95m2[m], [95m"w"[m);
+[93m 13 
+ 14 [m[8Carr[[95m0[m] = [95m0[m;
+[93m 15 
+ 16 [m[8C[93mwhile[m (!feof(fd1)) {
+[93m 17 
+ 18 [m[16Cfgets(buffer, [95m100[m, fd1);
+[93m 19 
+ 20 [m[16C[93mif[m (feof(fd1)) {
+[93m 21 [m[24C[93mbreak[m;
+[93m 22 [m[16C}
+[93m 23 
+ 24 [m[16Carr[x] = ftell(fd1);
+[93m 25 [m[16Cx++;
+[93m 26 
+ 27 [m[8C}
+[93m 28 
+ 29 [m[8C[93mfor[m ([38;5;121mint[m y = x - [95m2[m; y >= [95m0[m; y--) {
+[93m 30 
+ 31 [m[16Cfseek(fd1, arr[y], [95m0[m);
+[93m 32 [m[16Cfgets(buffer, [95m100[m, fd1);
+[93m 33 [m[16Cfputs(buffer, fd2);
+[93m 34 
+ 35 [m[8C}
+[93m 36 
+ 37 [m[8Cfclose(fd1);
+[93m 38 [m[8Cfclose(fd2);
+[93m 39 
+ 40 [m}
+[94m~                                                                                                                                                                                                           [42;1H~                                                                                                                                                                                                           [43;1H~                                                                                                                                                                                                           [44;1H~                                                                                                                                                                                                           [45;1H~                                                                                                                                                                                                           [46;1H~                                                                                                                                                                                                           [47;1H~                                                                                                                                                                                                           [48;1H~                                                                                                                                                                                                           [49;1H~                                                                                                                                                                                                           [50;1H~                                                                                                                                                                                                           [51;1H~                                                                                                                                                                                                           [52;1H~                                                                                                                                                                                                           [53;1H~                                                                                                                                                                                                           [54;1H~                                                                                                                                                                                                           [m[55;187H1,1[11CAll[1;5H[?25h[?25l[55;1H[K[55;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[55;1H[K[55;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[alpha][1;91;230m • [0mcat test.txt 
+Hello World
+my name is
+Edxio
+Kraudy
+[1;91;86m[alpha][1;91;230m • [0mcat test.txt [C[C[C[C[C[C[C[C[C[C[Kccc reverse[K[K[K[K[K[K[K[K[K reverseFile -o f[KreverseFile
+[01m[Kcc:[m[K [01;31m[Kfatal error: [m[Kinput file ‘[01m[KreverseFile[m[K’ is the same as output file
+compilation terminated.
+[1;91;86m[alpha][1;91;230m • [0mcc reverseFile -o reverseFile[1@.[1@c
+[1;91;86m[alpha][1;91;230m • [0m./reverseFile test.txt test3.txt
+[1;91;86m[alpha][1;91;230m • [0mcat test.c[Ktxt
+Hello World
+my name is
+Edxio
+Kraudy
+[1;91;86m[alpha][1;91;230m • [0mcat test.txt[K[K[K[K3.txt
+Kraudy
+Edxio
+my name is
+Hello World
+[1;91;86m[alpha][1;91;230m • [0mexit
+exit
+
+Script done on 2020-10-19 20:57:54-04:00 [COMMAND_EXIT_CODE="0"]

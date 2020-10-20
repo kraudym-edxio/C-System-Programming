@@ -50,6 +50,7 @@ struct dict_elem * readdict(const char *dictname,
 	fclose(inf);
 
       //mark end of list
+
 	inlist[i].d_length = 0;
 
 	return inlist;
@@ -57,12 +58,33 @@ struct dict_elem * readdict(const char *dictname,
 
 
 // your main function goes here.
-int main(void)
-{
+int main(void) {
 
-// struct dict_elem array[3] ={   {}, {},{} , {}  }
+	/**
+	  * We must write the contents of dict_elem array to some file
+	  * with the use of the writedict() function provided above.
+	  * Reading from the file will into dict_elem array is also done. 
+	  */
 
+	//Declaration of values within array
+	struct dict_elem array[4] = {{"Edxio", 0, 5, 1}, {"Danny", 0, 5, 1}, {"Paulo", 0, 5, 1}, {"David", 0, 5, 1}};
+	
+	//Writing the contents of the array above to testD.txt
+	if (writedict("testD.txt", array) != SUCCESS) {
+		printf("Writing error!\n");
+	}
+	
+	const int max = 4;
+	struct dict_elem readArray[max];
 
+	if (readdict("testD.txt", readArray, max) == NULL) {
+		printf("Reading error!\n");
+	}
 
+	for (int x = 0; x < max - 1; x++) {
+		printf("%s\n", readArray[x].d_name);
+	}
+	
+	return 0;
 
 }

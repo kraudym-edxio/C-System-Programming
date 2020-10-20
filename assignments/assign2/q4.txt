@@ -1,0 +1,71 @@
+Script started on 2020-10-19 20:58:34-04:00 [TERM="xterm-256color" TTY="/dev/pts/16" COLUMNS="204" LINES="55"]
+[1;91;86m[alpha][1;91;230m • [0mvi filesize3.c
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;55r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[55;1H"filesize3.c" 36L, 704C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m<stdio.h>[m
+[93m  2 
+  3 [m[38;5;121mint[m main ([38;5;121mint[m argc, [38;5;121mchar[m *argv[]) {
+[93m  4 
+  5 [m[8C[96m/**[m
+[93m  6 [m[96m        The other potential problem with this program is initializing fileSize to -1. [m
+[93m  7 [m[96m        This doesn't make sense in context because a file cannot be of a negative size.[m
+[93m  8 [m[96m        Indexing starts at postion zero, thus it makes more sense to initially consider a[m
+[93m  9 [m[96m        file to be size zero before characters are counted.  [m
+[93m 10 [m[96m        */[m
+[93m 11 
+ 12 [m[8C[38;5;121mFILE[m *fd;
+[93m 13 
+ 14 [m[8C[38;5;121mint[m ch;
+[93m 15 
+ 16 [m[8C[96m//int fileSize = -1;[m
+[93m 17 [m[8C[38;5;121mint[m fileSize = [95m0[m;
+[93m 18 
+ 19 [m[8Cfd = fopen(argv[[95m1[m], [95m"r+"[m);
+[93m 20 
+ 21 [m[96m/*      do{[m
+[93m 22 
+ 23 [m[96m                ch=getc(fd);  [m
+[93m 24 [m[96m                //printf("ch=%c ", ch);[m
+[93m 25 [m[96m                fileSize++;[m
+[93m 26 [m[96m                //printf("fileSize=%d\n", fileSize);[m
+[93m 27 
+ 28 [m[96m        } while( ch != EOF);[m
+[93m 29 [m[96m*/[m
+[93m 30 [m[8C[93mwhile[m ((ch = getc(fd)) != [95mEOF[m) {
+[93m 31 [m[16CfileSize++;
+[93m 32 [m[8C}
+[93m 33 
+ 34 [m[8Cprintf([95m"Size of [m[38;5;224m%s[m[95m is [m[38;5;224m%d\n[m[95m"[m, argv[[95m1[m], fileSize);
+[93m 35 
+ 36 [m}
+[94m~                                                                                                                                                                                                           [38;1H~                                                                                                                                                                                                           [39;1H~                                                                                                                                                                                                           [40;1H~                                                                                                                                                                                                           [41;1H~                                                                                                                                                                                                           [42;1H~                                                                                                                                                                                                           [43;1H~                                                                                                                                                                                                           [44;1H~                                                                                                                                                                                                           [45;1H~                                                                                                                                                                                                           [46;1H~                                                                                                                                                                                                           [47;1H~                                                                                                                                                                                                           [48;1H~                                                                                                                                                                                                           [49;1H~                                                                                                                                                                                                           [50;1H~                                                                                                                                                                                                           [51;1H~                                                                                                                                                                                                           [52;1H~                                                                                                                                                                                                           [53;1H~                                                                                                                                                                                                           [54;1H~                                                                                                                                                                                                           [m[55;187H1,1[11CAll[1;5H[?25h[?25l[55;1H[K[55;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[55;1H[K[55;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[alpha][1;91;230m • [0mcc filesize3.c - o[K[Ko fileS[Ksize3
+[1;91;86m[alpha][1;91;230m • [0mls -lt
+total 110
+-rwxr-xr-x 1 kraudym temp 16712 Oct 19 20:59 [0m[96;1;3mfilesize3[0m
+-rw-r--r-- 1 kraudym temp     0 Oct 19 20:58 [97mq4_text.t[0m
+-rw-r--r-- 1 kraudym temp     0 Oct 19 20:58 [97mq4.txt[0m
+-rw-r--r-- 1 kraudym temp  5605 Oct 19 20:57 [97mq3.txt[0m
+-rw-r--r-- 1 kraudym temp  1838 Oct 19 20:57 [97mq3_text.t[0m
+-rwxr-xr-x 1 kraudym temp 16920 Oct 19 20:57 [96;1;3mreverseFile[0m
+-rw-r--r-- 1 kraudym temp 10357 Oct 19 20:55 [97mq2.txt[0m
+-rw-r--r-- 1 kraudym temp  2030 Oct 19 20:55 [97mq2_text.t[0m
+-rwxr-xr-x 1 kraudym temp 16880 Oct 19 20:55 [96;1;3mdictionary[0m
+-rw-r--r-- 1 kraudym temp  7227 Oct 19 20:52 [97mq1.txt[0m
+-rw-r--r-- 1 kraudym temp  1326 Oct 19 20:52 [97mq1_text.t[0m
+-rwxr-xr-x 1 kraudym temp 16848 Oct 19 20:52 [96;1;3mreverse[0m
+-rw-r--r-- 1 kraudym temp   704 Oct 19 20:37 [97mfilesize3.c[0m
+-rw-r--r-- 1 kraudym temp  1739 Oct 19 20:16 [97mdictionary.c[0m
+-rw-r--r-- 1 kraudym temp   294 Oct 19 19:45 [97mdict.h[0m
+-rw-r--r-- 1 kraudym temp   473 Oct 19 19:18 [97mreverseFile.c[0m
+-rw-r--r-- 1 kraudym temp   354 Oct 13 20:13 [97mreverse.c[0m
+-rw-r--r-- 1 kraudym temp    36 Oct 13 19:44 [97mtest.txt[0m
+[1;91;86m[alpha][1;91;230m • [0mls -lt[K./filesize3 dictionary.c
+Size of dictionary.c is 1739
+[1;91;86m[alpha][1;91;230m • [0mls -lt dictionary.c
+-rw-r--r-- 1 kraudym temp 1739 Oct 19 20:16 [0m[97mdictionary.c[0m
+[1;91;86m[alpha][1;91;230m • [0mls -lt dictionary.c[C[C[C[C[C[C[C[C[C[C[5@./filesize3[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[Kreverse.c
+Size of reverse.c is 354
+[1;91;86m[alpha][1;91;230m • [0mls -lt reverse.c
+-rw-r--r-- 1 kraudym temp 354 Oct 13 20:13 [0m[97mreverse.c[0m
+[1;91;86m[alpha][1;91;230m • [0mexit
+exit
+
+Script done on 2020-10-19 20:59:52-04:00 [COMMAND_EXIT_CODE="0"]

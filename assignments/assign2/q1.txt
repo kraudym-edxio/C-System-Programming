@@ -1,0 +1,47 @@
+Script started on 2020-10-19 20:51:56-04:00 [TERM="xterm-256color" TTY="/dev/pts/16" COLUMNS="204" LINES="55"]
+[1;91;86m[alpha][1;91;230m • [0mvi file[K[K[K[Kreverse.c
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;55r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[55;1H"reverse.c" 29L, 354C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m<stdio.h>[m
+[93m  2 
+  3 [m[38;5;121mint[m main ([38;5;121mint[m argc, [38;5;121mchar[m *argv[]) {
+[93m  4 
+  5 [m[8C[38;5;121mFILE[m *f1, *f2;
+[93m  6 
+  7 [m[8C[38;5;121mint[m ch;
+[93m  8 [m[8C[38;5;121mint[m i = [95m0[m;
+[93m  9 [m[8C[38;5;121mint[m fileSize = -[95m1[m;
+[93m 10 
+ 11 [m[8Cf1 = fopen(argv[[95m1[m], [95m"r"[m);
+[93m 12 [m[8Cf2 = fopen(argv[[95m2[m], [95m"w"[m);
+[93m 13 
+ 14 [m[8C[93mdo[m {
+[93m 15 [m[16Cch = getc(f1);
+[93m 16 [m[16CfileSize++;
+[93m 17 
+ 18 [m[8C} [93mwhile[m (ch != [95mEOF[m);
+[93m 19 
+ 20 [m[8C[93mwhile[m (++i <= fileSize) {
+[93m 21 [m[16Cfseek(f1, -i, [95mSEEK_END[m);
+[93m 22 [m[16Cch = fgetc(f1);
+[93m 23 [m[16Cfputc(ch, f2);
+[93m 24 [m[8C}
+[93m 25 
+ 26 [m[8Cfclose(f1);
+[93m 27 [m[8Cfclose(f2);
+[93m 28 
+ 29 [m}
+[94m~                                                                                                                                                                                                           [31;1H~                                                                                                                                                                                                           [32;1H~                                                                                                                                                                                                           [33;1H~                                                                                                                                                                                                           [34;1H~                                                                                                                                                                                                           [35;1H~                                                                                                                                                                                                           [36;1H~                                                                                                                                                                                                           [37;1H~                                                                                                                                                                                                           [38;1H~                                                                                                                                                                                                           [39;1H~                                                                                                                                                                                                           [40;1H~                                                                                                                                                                                                           [41;1H~                                                                                                                                                                                                           [42;1H~                                                                                                                                                                                                           [43;1H~                                                                                                                                                                                                           [44;1H~                                                                                                                                                                                                           [45;1H~                                                                                                                                                                                                           [46;1H~                                                                                                                                                                                                           [47;1H~                                                                                                                                                                                                           [48;1H~                                                                                                                                                                                                           [49;1H~                                                                                                                                                                                                           [50;1H~                                                                                                                                                                                                           [51;1H~                                                                                                                                                                                                           [52;1H~                                                                                                                                                                                                           [53;1H~                                                                                                                                                                                                           [54;1H~                                                                                                                                                                                                           [m[55;187H1,1[11CAll[1;5H[?25h[?25l[55;1H[K[55;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[55;1H[K[55;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[alpha][1;91;230m • [0mcat test.txt 
+Hello World
+my name is
+Edxio
+Kraudy
+[1;91;86m[alpha][1;91;230m • [0mcc -[Kreverse.c -o reverse
+[1;91;86m[alpha][1;91;230m • [0m./reverse tesd[Kt.txt test.txt [K[K[K[K[K2.c[Ktxt
+[1;91;86m[alpha][1;91;230m • [0mcat test2.txt 
+
+yduarK
+oixdE
+si eman ym
+dlroW olleH[1;91;86m[alpha][1;91;230m • [0mexit
+exit
+
+Script done on 2020-10-19 20:52:49-04:00 [COMMAND_EXIT_CODE="0"]
