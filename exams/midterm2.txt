@@ -1,0 +1,73 @@
+Script started on 2020-10-28 10:31:18-04:00 [TERM="xterm-256color" TTY="/dev/pts/9" COLUMNS="134" LINES="40"]
+[1;91;86m[alpha][1;91;230m • [0mcat midterm2.t[Kc
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int main (int argc, char *argv[]) {
+
+	int pid = fork(); // P creates c1
+
+	//Testing if fork was successful
+	if (pid == -1) {
+		perror("Fork not possible");
+		exit(30);
+	}
+
+	if (pid == 0) { //Children block
+
+		printf("I am a child process, parent pid = %d, my pid = %d\n", getppid(), getpid());
+		pid = fork(); // c1 creates c2
+
+		if (pid == 0) {
+			
+			printf("I am a child process, parent pid = %d, my pid = %d\n", getppid(), getpid());
+			pid = fork(); //c2 creates c3
+			
+			if (pid == 0) {
+
+				printf("I am a child process, parent pid = %d, my pid = %d\n", getppid(), getpid());
+				pid = fork(); //c3 creates c4
+
+				if (pid == 0) {
+					printf("I am a child process, parent pid = %d, my pid = %d\n", getppid(), getpid());
+				}				
+
+			}
+
+		}
+
+	}
+
+	else { //Parent block
+		printf("I am the parent process, my pid = %d\n", getpid());
+		sleep(2);
+	}
+
+	return 0;
+
+}
+[1;91;86m[alpha][1;91;230m • [0mgcc -Wall midterm2.c -o midterm2
+[1;91;86m[alpha][1;91;230m • [0mclear
+[H[2J[3J[1;91;86m[alpha][1;91;230m • [0m..m[K[K/midterm2
+I am the parent process, my pid = 20732
+I am a child process, parent pid = 20732, my pid = 20753
+I am a child process, parent pid = 1, my pid = 20754
+I am a child process, parent pid = 1, my pid = 20756
+I am a child process, parent pid = 1, my pid = 20757
+^[[A^[[B[1;91;86m[alpha][1;91;230m • [0m./midterm2[K./midterm2
+I am the parent process, my pid = 20858
+I am a child process, parent pid = 20858, my pid = 20859
+I am a child process, parent pid = 20859, my pid = 20860
+I am a child process, parent pid = 20860, my pid = 20861
+I am a child process, parent pid = 20861, my pid = 20862
+[1;91;86m[alpha][1;91;230m • [0m./midterm2
+I am the parent process, my pid = 20931
+I am a child process, parent pid = 20931, my pid = 20932
+I am a child process, parent pid = 20932, my pid = 20933
+I am a child process, parent pid = 20933, my pid = 20934
+I am a child process, parent pid = 20934, my pid = 20935
+[1;91;86m[alpha][1;91;230m • [0mexit
+exit
+
+Script done on 2020-10-28 10:32:03-04:00 [COMMAND_EXIT_CODE="0"]
