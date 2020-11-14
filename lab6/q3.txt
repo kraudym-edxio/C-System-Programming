@@ -1,0 +1,87 @@
+Script started on 2020-11-14 04:10:57-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="96" LINES="30"]
+[1;91;86m[alpha][1;91;230m • [0mvi main_smallsh[K[K[K[K[K[K[K[K[K[K[K[Kpoe[K[Ke[Kroc_line.c 
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;30r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[30;1H"proc_line.c" 55L, 872C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m"smallsh.h"[m
+[93m  2 [m[38;5;81m#include [m[95m<string.h>[m
+[93m  3 [m[38;5;81m#include [m[95m<stdlib.h>[m
+[93m  4 
+  5 [m[38;5;121mint[m gettok([38;5;121mchar[m **outptr);
+[93m  6 [m[38;5;121mint[m runcommand([38;5;121mchar[m **cline, [38;5;121mint[m where);
+[93m  7 
+  8 [m[38;5;121mvoid[m procline([38;5;121mvoid[m) {
+[93m  9 
+ 10 [m[8C[38;5;121mchar[m *arg[MAXARG + [95m1[m];
+[93m 11 [m[8C[38;5;121mint[m toktype;
+[93m 12 [m[8C[38;5;121mint[m narg;
+[93m 13 [m[8C[38;5;121mint[m type;
+[93m 14 
+ 15 [m[8Cnarg = [95m0[m;
+[93m 16 
+ 17 [m[8C[93mfor[m (;;) {
+[93m 18 
+ 19 [m[16C[93mswitch[m (toktype = gettok(&arg[narg])) {
+[93m 20 
+ 21 [m[24Ccase ARG:
+[93m 22 [m[32Cprintf([95m"args[narg = [m[38;5;224m%d[m[95m] = [m[38;5;224m%s\n[m[95m"[m, narg, arg[narg]);[9C  [23;1H[93m    
+ 23 [m[32C[93mif[m (narg < MAXARG)
+[93m 24 [m[40Cnarg++;
+[93m 25 [m[32C[93mbreak[m;
+[93m 26 
+ 27 [m[24Ccase EOL:
+[93m 28 [m[32Cprintf([95m"args[narg = [m[38;5;224m%d[m[95m] = [m[38;5;224m%s\n[m[95m"[m, narg, arg[narg]);[30;79H1,1[11CTop[1;5H[?25h[?25l[30;79H2[2;5H[?25h[?25l[30;79H3[3;5H[?25h[?25l[30;79H4,0-1[4;5H[?25h[?25l[30;79H5,1  [5;5H[?25h[?25l[30;79H6[6;5H[?25h[?25l[30;79H7,0-1[7;5H[?25h[?25l[30;79H8,1  [8;5H[?25h[?25l[30;79H9,1-8[9;12H[?25h[?25l[30;79H10,1-8[10;12H[?25h[?25l[30;80H1[11;12H[?25h[?25l[30;80H2[12;12H[?25h[?25l[30;80H3[13;12H[?25h[?25l[30;80H4,0-1[14;5H[?25h[?25l[30;80H5,1-8[15;12H[?25h[?25l[30;80H6,0-1[16;5H[?25h[?25l[30;80H7,1-8[17;12H[?25h[?25l[30;80H8[18;12H[?25h[?25l[30;80H9[19;12H[?25h[?25l[30;79H20[20;12H[?25h[?25l[30;80H1[21;12H[?25h[?25l[30;80H2[22;12H[?25h[?25l[30;80H3[24;12H[?25h[?25l[30;80H4[25;12H[?25h[?25l[30;80H5[26;12H[?25h[?25l[30;80H6[27;12H[?25h[?25l[30;80H7[28;12H[?25h[?25l[30;80H8[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 29 [m[24Ccase SEMICOLON:[30;1H[K[30;79H29,1-8[9C3%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 30 [m[24Ccase AMPERSAND:[30;79H[K[30;79H30,1-8[9C7%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 31 [m[32C[93mif[m (toktype == AMPERSAND)[30;79H[K[30;79H31,1-8[8C11%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 32 [m[40Ctype = BACKGROUND;[30;79H[K[30;79H32,1-8[8C14%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 33 [m[30;79H[K[30;79H33,1-8[8C18%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 34 [m[32C[93melse[m[30;79H[K[30;79H34,1-8[8C22%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 35 [m[40Ctype = FOREGROUND;[30;79H[K[30;79H35,1-8[8C25%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 36 [m[30;79H[K[30;79H36,1-8[8C29%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 37 [m[32C[93mif[m (narg != [95m0[m) {[30;79H[K[30;79H37,1-8[8C33%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 38 [m[40Carg[narg] = [95mNULL[m;[30;79H[K[30;79H38,1-8[8C37%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 39 [m[40Cruncommand(arg, type);[30;79H[K[30;79H39,1-8[8C40%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 40 [m[32C}[30;79H[K[30;79H40,1-8[8C44%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 41 [m[30;79H[K[30;79H41,0-1[8C48%[29;5H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 42 [m[32C[93mif[m (toktype == EOL)[30;79H[K[30;79H42,1-8[8C51%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 43 [m[40C[93mreturn[m;[30;79H[K[30;79H43,1-8[8C55%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 44 [m[30;79H[K[30;79H44,1-8[8C59%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 45 [m[32Cnarg = [95m0[m;[30;79H[K[30;79H45,1-8[8C62%[29;12H[?25h[?25l[1;29r[29;1H
+[1;30r[29;1H[93m 46 [m[32C[93mbreak[m;[30;79H[K[30;79H46,1-8[8C66%[29;12H[?25h[?25l[30;80H5[28;12H[?25h[?25l[30;80H4[27;12H[?25h[?25l[30;80H3[26;12H[?25h[?25l[30;80H2[25;12H[?25h[?25l[30;80H1,0-1[24;5H[?25h[?25l[30;80H0,1-8[23;12H[?25h[?25l[30;79H39[22;12H[?25h[?25l[30;80H8[21;12H[?25h[?25l[30;80H7[20;12H[?25h[?25l[30;80H6[19;12H[?25h[?25l[30;80H5[18;12H[?25h[?25l[30;80H4[17;12H[?25h[?25l[30;80H3[16;12H[?25h[?25l[30;80H2[15;12H[?25h[?25l[30;80H1[14;12H[?25h[?25l[30;79H[K[30;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[30;1H[K[30;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[alpha][1;91;230m • [0mvi proc_line.c [C[C[C[C[C[C[C[C[C[C./main_smallsh[C[C[C[C[C[C[C[C[C[C[Cgcc -g main_smallsh.c proc_line.c runcommand.c smallsh.h userin.c -o main_smallsh
+[1;91;86m[alpha][1;91;230m • [0m./main_smallsh 
+Command> ls -l -t
+args[narg = 0] = ls
+args[narg = 1] = -l
+args[narg = 2] = -t
+args[narg = 3] = 
+
+total 55
+-rwxr-xr-x 1 kraudym temp 25560 Nov 14 04:11 main_smallsh
+-rw-r--r-- 1 kraudym temp     0 Nov 14 04:10 q3.t
+-rw-r--r-- 1 kraudym temp     0 Nov 14 04:10 q3.txt
+-rw-r--r-- 1 kraudym temp   872 Nov 14 04:07 proc_line.c
+-rw-r--r-- 1 kraudym temp  1207 Nov  9 15:22 userin.c
+-rw-r--r-- 1 kraudym temp   292 Nov  9 15:02 smallsh.h
+-rw-r--r-- 1 kraudym temp   469 Nov  9 15:02 runcommand.c
+-rw-r--r-- 1 kraudym temp   156 Nov  9 14:56 main_smallsh.c
+-rwxr-xr-x 1 kraudym temp 19840 Nov  9 14:55 lab6
+-rw-r--r-- 1 kraudym temp  1292 Nov  9 14:55 lab6.c
+Command> ls -ls
+args[narg = 0] = ls
+args[narg = 1] = -ls
+args[narg = 2] = 
+
+total 55
+20 -rwxr-xr-x 1 kraudym temp 19840 Nov  9 14:55 lab6
+ 2 -rw-r--r-- 1 kraudym temp  1292 Nov  9 14:55 lab6.c
+26 -rwxr-xr-x 1 kraudym temp 25560 Nov 14 04:11 main_smallsh
+ 1 -rw-r--r-- 1 kraudym temp   156 Nov  9 14:56 main_smallsh.c
+ 2 -rw-r--r-- 1 kraudym temp   872 Nov 14 04:07 proc_line.c
+ 1 -rw-r--r-- 1 kraudym temp     0 Nov 14 04:10 q3.t
+ 1 -rw-r--r-- 1 kraudym temp     0 Nov 14 04:10 q3.txt
+ 1 -rw-r--r-- 1 kraudym temp   469 Nov  9 15:02 runcommand.c
+ 1 -rw-r--r-- 1 kraudym temp   292 Nov  9 15:02 smallsh.h
+ 2 -rw-r--r-- 1 kraudym temp  1207 Nov  9 15:22 userin.c
+Command> ^C
+[1;91;86m[alpha][1;91;230m • [0mexit
+exit
+
+Script done on 2020-11-14 04:11:35-05:00 [COMMAND_EXIT_CODE="130"]

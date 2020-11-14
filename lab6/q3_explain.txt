@@ -1,0 +1,11 @@
+Edxio Kraudy Mora
+November 14, 2020
+Lab Section 51
+
+
+I added two print statements to proc_line.c
+in order to achieve the appropriate print out.
+One print statement was added to the case ARG: block
+and one print statement was added to the case EOL: block.
+This is so because arg will assume the value of the user inputted
+token at these cases of the switch block. 

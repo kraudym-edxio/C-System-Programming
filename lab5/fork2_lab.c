@@ -21,7 +21,7 @@ int main(){
 		
 		//glb++; var++;
 	//	sleep(10);
-		sleep(4);
+		sleep(80);
 	        glb++; var++;
 	}
 	else{ // parent
