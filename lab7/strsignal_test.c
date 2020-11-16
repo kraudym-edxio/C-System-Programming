@@ -16,7 +16,8 @@
 	discovered that it returns a string describing a signal.
 	The for loop will not exceed past signal number 64. This is
 	so because signals after this number are unknown signals.
-	I have discovered 64 signals. 
+	I have discovered that signal 32 and 33 are unknown. There is
+	a total of 62 defined signals. 
 */
 
 int main (int argc, char *argv[]) {
