@@ -1,0 +1,61 @@
+Script started on 2020-11-18 00:19:22-05:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="94" LINES="28"]
+[1;91;86m[alpha][1;91;230m • [0mvi sigchld_test.c
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;28r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[28;1H"sigchld_test.c" 36L, 537C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m<stdio.h>[m
+[93m  2 [m[38;5;81m#include [m[95m<stdlib.h>[m
+[93m  3 [m[38;5;81m#include [m[95m<unistd.h>[m
+[93m  4 [m[38;5;81m#include [m[95m<signal.h>[m
+[93m  5 [m[38;5;81m#include [m[95m<sys/wait.h>[m
+[93m  6 
+  7 [m[38;5;121mvoid[m childHandler([38;5;121mint[m dummy) {
+[93m  8 
+  9 [m[8Cpid_t pid;
+[93m 10 [m[8C[38;5;121mint[m status;
+[93m 11 
+ 12 [m[8Cpid = wait(&status);
+[93m 13 [m[8C[38;5;121mint[m exit_status = WEXITSTATUS(status);
+[93m 14 [m[8Cprintf([95m"Child [m[38;5;224m%d[m[95m has been terminated, with exit status [m[38;5;224m%d[m[95m.[m[38;5;224m\n[m[95m"[m, pid, exit_status);  [15;1H[93m    
+ 15 
+ 16 [m}
+[93m 17 
+ 18 [m[38;5;121mint[m main ([38;5;121mint[m argc, [38;5;121mchar[m *argv[]) {
+[93m 19 
+ 20 [m[8Cpid_t pid;
+[93m 21 
+ 22 [m[8C[93mwhile[m ([95m1[m) {
+[93m 23 
+ 24 [m[16Csignal([95mSIGCHLD[m, childHandler);
+[93m 25 
+ 26 [m[16C[93mif[m ((pid = fork()) == [95m0[m) {[28;77H1,1[11CTop[1;5H[?25h[?25l[28;77H2[2;5H[?25h[?25l[28;77H3[3;5H[?25h[?25l[28;77H4[4;5H[?25h[?25l[28;77H5[5;5H[?25h[?25l[28;77H6,0-1[6;5H[?25h[?25l[28;77H7,1  [7;5H[?25h[?25l[28;77H8,1-8[8;12H[?25h[?25l[28;77H9[9;12H[?25h[?25l[28;77H10,1-8[10;12H[?25h[?25l[28;78H1,0-1[11;5H[?25h[?25l[28;78H2,1-8[12;12H[?25h[?25l[28;78H3[13;12H[?25h[?25l[28;78H4[14;12H[?25h[?25l[28;78H5,0-1[16;5H[?25h[?25l[7;34H[46m{[17;5H}[m[28;78H6,1  [17;5H[?25h[?25l[7;34H{[17;5H}[28;78H7,0-1[18;5H[?25h[?25l[28;78H8,1  [19;5H[?25h[?25l[28;78H9,0-1[20;5H[?25h[?25l[28;77H20,1-8[21;12H[?25h[?25l[28;78H1,0-1[22;5H[?25h[?25l[28;78H2,1-8[23;12H[?25h[?25l[28;78H3[24;12H[?25h[?25l[28;78H4[25;12H[?25h[?25l[28;78H5[26;12H[?25h[?25l[28;78H6[27;12H[?25h[?25l[1;27r[27;1H
+[1;28r[27;1H[93m 27 [m[24Csleep([95m5[m);[28;1H[K[28;77H27,1-8[8C10%[27;12H[?25h[?25l[1;27r[27;1H
+[1;28r[27;1H[93m 28 [m[24Cexit([95m4[m);[28;77H[K[28;77H28,1-8[8C20%[27;12H[?25h[?25l[1;27r[27;1H
+[1;28r[27;1H[93m 29 [m[16C}[28;77H[K[28;77H29,1-8[8C30%[27;12H[?25h[?25l[1;27r[27;1H
+[1;28r[27;1H[93m 30 [m[28;77H[K[28;77H30,0-1[8C40%[27;5H[?25h[?25l[1;27r[27;1H
+[1;28r[27;1H[93m 31 [m[16Cprintf([95m"Created a child, pid = [m[38;5;224m%d\n[m[95m"[m, pid);[28;77H[K[28;77H31,1-8[8C50%[27;12H[?25h[?25l[1;27r[27;1H
+[1;28r[27;1H[93m 32 [m[16Csleep([95m2[m);[28;77H[K[28;77H32,1-8[8C60%[27;12H[?25h[?25l[1;27r[27;1H
+[1;28r[27;1H[93m 33 [m[28;77H[K[28;77H33,0-1[8C70%[27;5H[?25h[?25l[1;27r[27;1H
+[1;28r[27;1H[93m 34 [m[8C}[28;77H[K[28;77H34,1-8[8C80%[27;12H[?25h[?25l[1;27r[27;1H
+[1;28r[27;1H[93m 35 [m[28;77H[K[28;77H35,0-1[8C90%[27;5H[?25h[?25l[1;27r[27;1H
+[1;28r[9;39H[46m{[m[27;1H[93m 36 [m[46m}[m[28;77H[K[28;77H36,1[10CBot[27;5H[?25h[?25l[28;77H[K[28;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[28;1H[K[28;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[alpha][1;91;230m • [0mgcc -g sigchld_test.c -o sigchld_test
+[1;91;86m[alpha][1;91;230m • [0m./sigchld_test 
+Created a child, pid = 9330
+Created a child, pid = 9339
+Created a child, pid = 9348
+Child 9330 has been terminated, with exit status 4.
+Created a child, pid = 9355
+Child 9339 has been terminated, with exit status 4.
+Created a child, pid = 9362
+Child 9348 has been terminated, with exit status 4.
+Created a child, pid = 9401
+Child 9355 has been terminated, with exit status 4.
+Created a child, pid = 9408
+Child 9362 has been terminated, with exit status 4.
+Created a child, pid = 9417
+Child 9401 has been terminated, with exit status 4.
+Created a child, pid = 9428
+Child 9408 has been terminated, with exit status 4.
+Created a child, pid = 9457
+^C
+[1;91;86m[alpha][1;91;230m • [0mexit
+exit
+
+Script done on 2020-11-18 00:20:02-05:00 [COMMAND_EXIT_CODE="130"]

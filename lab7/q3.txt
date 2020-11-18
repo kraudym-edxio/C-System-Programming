@@ -1,0 +1,71 @@
+Script started on 2020-11-17 23:20:10-05:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="120" LINES="42"]
+[1;91;86m[alpha][1;91;230m • [0mvi handler.c
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;42r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[42;1H"handler.c" 35L, 608C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m<stdio.h>[m
+[93m  2 [m[38;5;81m#include [m[95m<signal.h>[m
+[93m  3 [m[38;5;81m#include [m[95m<unistd.h>[m
+[93m  4 
+  5 [m[38;5;121mvoid[m ctrlC_handler([38;5;121mint[m);
+[93m  6 
+  7 [m[38;5;121mvoid[m ctrlC_handler([38;5;121mint[m dummy) {
+[93m  8 [m[8Cprintf([95m"CTRL-C has been pressed![m[38;5;224m\n[m[95m"[m);
+[93m  9 [m}
+[93m 10 
+ 11 [m[38;5;121mint[m main ([38;5;121mint[m argc, [38;5;121mchar[m *argv[]) {
+[93m 12 
+ 13 [m[8Csignal([95m2[m, ctrlC_handler); [96m//Install handler for CTRL-C[m
+[93m 14 [m[8Csignal([95mSIGTSTP[m, [95mSIG_IGN[m); [96m//Ignore CTRL-Z[m
+[93m 15 
+ 16 [m[8Cpid_t pid;
+[93m 17 
+ 18 [m[8C[93mif[m ((pid = fork()) > [95m0[m) { [96m//Parent block[m
+[93m 19 
+ 20 [m[16C[93mfor[m ([38;5;121mint[m i = [95m1[m; i <= [95m15[m; i++) {
+[93m 21 [m[24Cprintf([95m"I am in parent process.[m[38;5;224m\n[m[95m"[m);
+[93m 22 [m[24Ckill(pid, [95m2[m);
+[93m 23 [m[24Csleep([95m1[m);
+[93m 24 [m[16C}
+[93m 25 
+ 26 [m[8C}
+[93m 27 
+ 28 [m[8C[93melse[m { [96m//Child block[m
+[93m 29 [m[16Cprintf([95m"I am the child[m[38;5;224m\n[m[95m"[m);
+[93m 30 [m[16C[96m//signal(2, SIG_IGN); [m
+[93m 31 [m[16C[96m//pause();[m
+[93m 32 [m[16Cexeclp([95m"./donothing"[m, [95m"donothing"[m, [95mNULL[m);
+[93m 33 [m[8C}
+[93m 34 
+ 35 [m}
+[94m~                                                                                                                       [37;1H~                                                                                                                       [38;1H~                                                                                                                       [39;1H~                                                                                                                       [40;1H~                                                                                                                       [41;1H~                                                                                                                       [m[42;103H1,1[11CAll[1;5H[?25h[?25l[42;1H[K[42;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[42;1H[K[42;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[alpha][1;91;230m • [0mgcc g[K-g handler.c -o handler
+[1;91;86m[alpha][1;91;230m • [0m./handler 
+I am in parent process.
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^ZI am in parent process.
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+I am in parent process.
+^CCTRL-C has been pressed!
+[1;91;86m[alpha][1;91;230m • [0m^C
+[1;91;86m[alpha][1;91;230m • [0mexit
+exit
+
+Script done on 2020-11-17 23:20:40-05:00 [COMMAND_EXIT_CODE="130"]

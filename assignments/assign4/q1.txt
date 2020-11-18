@@ -1,0 +1,43 @@
+Script started on 2020-11-16 23:12:55-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="103" LINES="34"]
+[1;91;86m[alpha][1;91;230m • [0mvi inherit.c
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;34r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[34;1H"inherit.c" 32L, 609C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m<stdio.h>[m
+[93m  2 [m[38;5;81m#include [m[95m<stdlib.h>[m
+[93m  3 [m[38;5;81m#include [m[95m<sys/wait.h>[m
+[93m  4 [m[38;5;81m#include [m[95m<unistd.h>[m
+[93m  5 [m[38;5;81m#include [m[95m<fcntl.h>[m
+[93m  6 
+  7 [m[38;5;121mint[m main ([38;5;121mint[m argc, [38;5;121mchar[m *argv[]) {
+[93m  8 
+  9 [m[8C[38;5;121mint[m fd = open([95m"sample.txt"[m, O_RDONLY);
+[93m 10 
+ 11 [m[8C[38;5;121mchar[m str[[95m100[m];
+[93m 12 [m[8C[38;5;121mint[m pid = fork();
+[93m 13 
+ 14 [m[8C[93mif[m (pid == [95m0[m) { [96m//Child block[m
+[93m 15 [m[16Cclose(fd); [96m//Child process closes file descriptor[m
+[93m 16 [m[8C}
+[93m 17 
+ 18 [m[8C[93melse[m { [96m//Parent block[m
+[93m 19 [m[16Cwait([95m0[m); [96m//Wait for the child process to terminate[m
+[93m 20 
+ 21 [m[16Cread(fd, &str, [95m100[m); [96m//Attempting to read from fd that child closed[m
+[93m 22 [m[16Cprintf([95m"[m[38;5;224m%s[m[95m"[m, str);
+[93m 23 [m[8C}
+[93m 24 
+ 25 [m[8Cclose(fd);
+[93m 26 
+ 27 [m}
+[93m 28 
+ 29 [m[96m/*[m
+[93m 30 [m[96m        From this simple program we learn that if a child closes a[m
+[93m 31 [m[96m        file descriptor, it will remain open in the parent.[m
+[93m 32 [m[96m*/[m
+[94m~                                                                                                      [m[34;86H1,1[11CAll[1;5H[?25h[?25l[34;1H[K[34;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[34;1H[K[34;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[alpha][1;91;230m • [0mvi inherit.c[C[C[C[C[C[C[C[C[C[C[8Pexitgit push origin master[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -m "nineth commit"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Ppush origin master[C[C[C[C[C[C[C[C[C[Cexit[Kvi inherit.c[C[C[C[C[C[C[C[C[C[C[Kgcc - [Kg o[Kinherit.c -o a[Kinherit
+[1;91;86m[alpha][1;91;230m • [0m./inherit 
+Hello, World! This is a simple test.
+[1;91;86m[alpha][1;91;230m • [0mcat sample.txt 
+Hello, World! This is a simple test.
+[1;91;86m[alpha][1;91;230m • [0mexit
+exit
+
+Script done on 2020-11-16 23:13:30-05:00 [COMMAND_EXIT_CODE="0"]
