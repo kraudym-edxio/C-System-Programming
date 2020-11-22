@@ -1,0 +1,183 @@
+Script started on 2020-11-22 15:55:37-05:00 [TERM="xterm-256color" TTY="/dev/pts/22" COLUMNS="80" LINES="24"]
+[1;91;86m[charlie][1;91;230m • [0mcat proc_line.c 
+/*
+	Name: Edxio Kraudy Mora
+	Date: November 14, 2020
+	Lab Section 51
+*/
+
+
+#include "smallsh.h"
+#include <string.h>
+#include <stdlib.h>
+
+int gettok(char **outptr);
+int runcommand(char **cline, int where);
+
+void procline(void) {
+	
+	char *arg[MAXARG + 1]; 
+	int toktype; 
+	int narg; 
+	int type; 
+
+	narg = 0;
+
+	for (;;) {
+	   
+		switch (toktype = gettok(&arg[narg])) {
+		
+			case ARG:
+				printf("args[narg = %d] = %s\n", narg, arg[narg]);				
+				if (narg < MAXARG)
+					narg++;
+				break;
+		
+			case EOL:
+				printf("args[narg = %d] = %s\n", narg, arg[narg]);
+			case SEMICOLON:
+			case AMPERSAND:
+				if (toktype == AMPERSAND)
+					type = BACKGROUND;
+				
+				else
+					type = FOREGROUND;
+			
+				if (narg != 0) {
+					arg[narg] = NULL;
+					runcommand(arg, type);
+				}
+
+				if (toktype == EOL)
+					return;
+			
+				narg = 0;
+				break;
+	  	}
+	  
+		//Added for assignment 3
+                //if (!strcmp(arg[narg-1],"exit"))
+			//exit(5);
+
+	}
+
+}
+[1;91;86m[charlie][1;91;230m • [0m./maq[Kin_smallsh 
+Command> ls
+args[narg = 0] = ls
+args[narg = 1] = 
+
+lab6	main_smallsh	proc_line.c	q3.t	q4.t	runcommand.c  userin.c
+lab6.c	main_smallsh.c	q3_explain.txt	q3.txt	q4.txt	smallsh.h
+Command> ls -ls
+args[narg = 0] = ls
+args[narg = 1] = -ls
+args[narg = 2] = 
+
+total 66
+20 -rwxr-xr-x 1 kraudym temp 19840 Nov  9 14:55 lab6
+ 2 -rw-r--r-- 1 kraudym temp  1292 Nov  9 14:55 lab6.c
+26 -rwxr-xr-x 1 kraudym temp 25560 Nov 14 04:11 main_smallsh
+ 1 -rw-r--r-- 1 kraudym temp   156 Nov  9 14:56 main_smallsh.c
+ 2 -rw-r--r-- 1 kraudym temp   946 Nov 14 04:19 proc_line.c
+ 1 -rw-r--r-- 1 kraudym temp   364 Nov 14 04:18 q3_explain.txt
+ 3 -rw-r--r-- 1 kraudym temp  1750 Nov 14 04:11 q3.t
+ 8 -rw-r--r-- 1 kraudym temp  6818 Nov 14 04:11 q3.txt
+ 1 -rw-r--r-- 1 kraudym temp     0 Nov 22 15:55 q4.t
+ 1 -rw-r--r-- 1 kraudym temp     0 Nov 22 15:55 q4.txt
+ 1 -rw-r--r-- 1 kraudym temp   469 Nov  9 15:02 runcommand.c
+ 1 -rw-r--r-- 1 kraudym temp   292 Nov  9 15:02 smallsh.h
+ 2 -rw-r--r-- 1 kraudym temp  1206 Nov 22 15:01 userin.c
+Command> cd    ls
+args[narg = 0] = ls
+args[narg = 1] = 
+
+lab6	main_smallsh	proc_line.c	q3.t	q4.t	runcommand.c  userin.c
+lab6.c	main_smallsh.c	q3_explain.txt	q3.txt	q4.txt	smallsh.h
+Command> cat la	 ab.c
+args[narg = 0] = cat
+args[narg = 1] = lab.c
+args[narg = 2] = 
+
+cat: lab.c: No such file or directory
+Command> cat lab6.c
+args[narg = 0] = cat
+args[narg = 1] = lab6.c
+args[narg = 2] = 
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+
+//Name: Edxio Kraudy Mora
+//Date: November 9, 2020
+//Lab Section: 51
+//Student ID: 110006224
+
+//p ------->c1------>c3
+//     |----->c2------>c4
+
+
+/* 
+	Question 1) When we delete "else exit(11);
+	p -------> c1 -------> c3
+			 |---> (process which was not terminated by an exit()		
+
+	     |---> c2 -------> c4
+			 |---> (process which was not terminated by an exit()
+*/
+
+int main (int argc, char *argv[]) {
+
+	pid_t pid, cpid;
+
+	printf("I am the parent process, my pid = % d\n", getpid());
+
+	for (int i = 0; i < 2; i++) {
+
+		cpid=fork();
+
+		if (cpid == 0) {	
+
+			printf("!) I am a child process, parent pid = %d, my pid = %d\n", getppid(), getpid());
+			//exit(10);
+
+			pid_t ccpid;
+			ccpid=fork();
+
+			if (ccpid == 0) {
+			     printf("#) I am a child process, my parent pid = %d, my pid = %d\n", getppid(), getpid());
+			     exit(10);
+			}
+
+			else exit(11); //delete it?
+		      
+		}
+
+		//else continue;
+
+		/*
+			Question 2) Adding wait
+			Rather than "else continue", adding "else wait(NULL)"
+			will make sure that the current child process is terminated
+			before its parent. Parent will wait for child to terminate
+			and then parent will continue.
+		*/
+
+		else wait(NULL);
+
+	}
+
+}
+Command> exit
+args[narg = 0] = exit
+args[narg = 1] = 
+
+exit: No such file or directory
+Command> ^C
+[1;91;86m[charlie][1;91;230m • [0mexit
+exit
+
+Script done on 2020-11-22 15:56:15-05:00 [COMMAND_EXIT_CODE="130"]

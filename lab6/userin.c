@@ -41,7 +41,7 @@ int gettok(char **outptr) {
 	int type;
 	
 	*outptr = tok;
-	
+
 	while (*ptr == ' ' || *ptr == '\t')
 		ptr++;
 	
