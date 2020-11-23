@@ -1,0 +1,13 @@
+For case 1 (pcsc1.c):
+	
+	Child is running
+	User defined signal 1
+
+	The above two statements are the output for 
+	case 1 modification. The child print statement is
+	executed and a prompt informing us of SIGUSR1 is shown.
+	The pause() function is not used in parallel to the parent's
+	call to kill(). Since this coordination is not present, there 
+	is not an infinite loop and the program terminates- switching
+	does not occur.
+	 
