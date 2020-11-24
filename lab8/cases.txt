@@ -10,4 +10,25 @@ For case 1 (pcsc1.c):
 	call to kill(). Since this coordination is not present, there 
 	is not an infinite loop and the program terminates- switching
 	does not occur.
-	 
+
+For case 2 (pcsc2.c):
+	
+	Parent is running
+
+	The above statement is the output for the case 2
+	modification. This is so because both the child and 
+	parent execute the pause() line in parallel. The program
+	stays in idle until a process receives a signal- but this cannot
+	happen when both processes are paused.
+
+For case 3 (pcsc3.c):
+
+	Child is running
+	User defined signal 1
+
+	The output is the same as case 1. Even though case 3 is
+	similar to the original- statements opposite, we cannot
+	expect it to beahve in a similar fashion. This is so because
+	the call to signal() is in a different location. For case 3 in 
+	the parent, pause() is declared before signal(), whereas in the
+	orignal kill() is declared before signal. 	 	 
