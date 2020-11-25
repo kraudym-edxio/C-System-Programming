@@ -1,0 +1,78 @@
+Script started on 2020-11-23 22:33:26-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="119" LINES="41"]
+[1;91;86m[bravo][1;91;230m • [0mvi pipeexec.c
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;41r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[41;1H"pipeexec.c" 51L, 1000C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[93m  1 [m[38;5;81m#include [m[95m<stdio.h>[m
+[93m  2 [m[38;5;81m#include [m[95m<stdlib.h>[m
+[93m  3 [m[38;5;81m#include [m[95m<sys/wait.h>[m
+[93m  4 [m[38;5;81m#include [m[95m<unistd.h>[m
+[93m  5 [m[38;5;81m#include [m[95m<fcntl.h>[m
+[93m  6 
+  7 [m[38;5;121mint[m main ([38;5;121mint[m argc, [38;5;121mchar[m *argv[]) {
+[93m  8 
+  9 [m[8Cpid_t pid;
+[93m 10 
+ 11 [m[8C[96m//Creating a pipe[m
+[93m 12 [m[8C[38;5;121mint[m fd[[95m2[m];
+[93m 13 [m[8Cpipe(fd);
+[93m 14 
+ 15 [m[8C[93mif[m ((pid = fork()) == [95m0[m) { [96m//Child block[m
+[93m 16 
+ 17 [m[16Cclose(fd[[95m0[m]);
+[93m 18 [m[16Cdup2(fd[[95m1[m], [95m1[m); [96m//Redirect stdout to the pipe, writing end[m
+[93m 19 [m[16Cclose(fd[[95m1[m]);
+[93m 20 
+ 21 [m[16C[96m//Execute the commands given in command line[m
+[93m 22 [m[16Cexeclp(argv[[95m1[m], argv[[95m1[m], argv[[95m2[m], ([38;5;121mchar[m*) [95mNULL[m);
+[93m 23 
+ 24 [m[8C}
+[93m 25 
+ 26 [m[8C[93melse[m { [96m//Parent block[m
+[93m 27 
+ 28 [m[16Cclose(fd[[95m1[m]); [96m//Close writing end of the pipe [m
+[93m 29 
+ 30 [m[16C[96m//Create and open the file result.txt to then write to[m
+[93m 31 [m[16C[38;5;121mint[m fd1 = open([95m"result.txt"[m, O_CREAT | O_RDWR | O_TRUNC, [38;5;81m0[m[95m777[m);
+[93m 32 
+ 33 [m[16C[38;5;121mint[m counter = [95m0[m; [96m//represents the fileSize[m
+[93m 34 [m[16C[38;5;121mchar[m c;
+[93m 35 
+ 36 [m[16C[96m//Read and then write to result.txt[m
+[93m 37 [m[16C[93mwhile[m ((read(fd[[95m0[m], &c, [95m1[m)) != [95m0[m) {
+[93m 38 [m[24Cwrite(fd1, &c, [95m1[m);
+[93m 39 [m[24Ccounter++;
+[93m 40 [m[16C}[41;102H1,1[11CTop[1;5H[?25h[?25l[41;102H2[2;5H[?25h[?25l[41;102H3[3;5H[?25h[?25l[41;102H4[4;5H[?25h[?25l[41;102H5[5;5H[?25h[?25l[41;102H6,0-1[6;5H[?25h[?25l[41;102H7,1  [7;5H[?25h[?25l[41;102H8,0-1[8;5H[?25h[?25l[41;102H9,1-8[9;12H[?25h[?25l[41;102H10,0-1[10;5H[?25h[?25l[41;103H1,1-8[11;12H[?25h[?25l[41;103H2[12;12H[?25h[?25l[41;103H3[13;12H[?25h[?25l[41;103H4,0-1[14;5H[?25h[?25l[41;103H5,1-8[15;12H[?25h[?25l[41;103H6,0-1[16;5H[?25h[?25l[41;103H7,1-8[17;12H[?25h[?25l[41;103H8[18;12H[?25h[?25l[41;103H9[19;12H[?25h[?25l[41;102H20,0-1[20;5H[?25h[?25l[41;103H1,1-8[21;12H[?25h[?25l[41;103H2[22;12H[?25h[?25l[41;103H3,0-1[23;5H[?25h[?25l[41;103H4,1-8[24;12H[?25h[?25l[41;103H5,0-1[25;5H[?25h[?25l[41;103H6,1-8[26;12H[?25h[?25l[41;103H7,0-1[27;5H[?25h[?25l[41;103H8,1-8[28;12H[?25h[?25l[41;103H9,0-1[29;5H[?25h[?25l[41;102H30,1-8[30;12H[?25h[?25l[41;103H1[31;12H[?25h[?25l[41;103H2[32;12H[?25h[?25l[41;103H3[33;12H[?25h[?25l[41;103H4[34;12H[?25h[?25l[41;103H5,0-1[35;5H[?25h[?25l[41;103H6,1-8[36;12H[?25h[?25l[41;103H7[37;12H[?25h[?25l[41;103H8[38;12H[?25h[?25l[41;103H9[39;12H[?25h[?25l[41;102H40[40;12H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 41 [m[41;1H[K[41;102H41,0-1[9C9%[40;5H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 42 [m[16Cwait([95mNULL[m); [96m//Wait for child process to terminate[m[41;102H[K[41;102H42,1-8[8C18%[40;12H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 43 [m[41;102H[K[41;102H43,0-1[8C27%[40;5H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 44 [m[16Cprintf([95m"The result of [m[38;5;224m%s[m[95m is written into result.txt with total [m[38;5;224m%d[m[95m bytes.[m[38;5;224m\n[m[95m"[m, argv[[95m1[m], counter);[41;102H[K[41;102H44,1-8[8C36%[40;12H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 45 [m[41;102H[K[41;102H45,1-8[8C45%[40;12H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 46 [m[16Cclose(fd1);[41;102H[K[41;102H46,1-8[8C54%[40;12H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 47 [m[16Cclose(fd[[95m0[m]);[41;102H[K[41;102H47,1-8[8C63%[40;12H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 48 [m[41;102H[K[41;102H48,0-1[8C72%[40;5H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 49 [m[8C}[41;102H[K[41;102H49,1-8[8C81%[40;12H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 50 [m[41;102H[K[41;102H50,0-1[8C90%[40;5H[?25h[?25l[1;40r[40;1H
+[1;41r[40;1H[93m 51 [m}[41;102H[K[41;102H51,1[10CBot[40;5H[?25h[?25l[41;102H[K[41;1H:[?2004h[?25hx[?25l[?25h[?25l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[41;1H[K[41;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[1;91;86m[bravo][1;91;230m • [0mgc  0g [K[K[K[K[Kc -g pipeexec.c -o pipeexec
+[1;91;86m[bravo][1;91;230m • [0m./pipeexec ls
+The result of ls is written into result.txt with total 69 bytes.
+[1;91;86m[bravo][1;91;230m • [0mls
+[0m[96;1;3malarm[0m  [97malarm.c[0m  [96;1;3mpipeexec[0m  [97mpipeexec.c[0m  [97mq1.t[0m  [97mq1.txt[0m  [97mq3.t[0m  [97mq3.txt[0m  [96;1;3mresult.txt[0m
+[1;91;86m[bravo][1;91;230m • [0mcat result.txt 
+alarm
+alarm.c
+pipeexec
+pipeexec.c
+q1.t
+q1.txt
+q3.t
+q3.txt
+result.txt
+[1;91;86m[bravo][1;91;230m • [0mcat result.txt [C[C[C[C[C[C[C[C[C[C[2P./pipeexec ls[K[Kunname[K[K[K[Kame
+The result of uname is written into result.txt with total 6 bytes.
+[1;91;86m[bravo][1;91;230m • [0mcat result.txt 
+Linux
+[1;91;86m[bravo][1;91;230m • [0mod -c result.txt 
+0000000   L   i   n   u   x  \n
+0000006
+[1;91;86m[bravo][1;91;230m • [0mexit
+exit
+
+Script done on 2020-11-23 22:34:39-05:00 [COMMAND_EXIT_CODE="0"]
