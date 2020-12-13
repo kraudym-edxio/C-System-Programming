@@ -1,0 +1,37 @@
+Script started on 2020-12-12 21:51:41-05:00 [TERM="xterm-256color" TTY="/dev/pts/61" COLUMNS="80" LINES="25"]
+[1;91;86m[charlie][1;91;230m • [0m./[K[Kexit./server2[5Pexit./client2 137.207.82.53
+Please help me execute this command: lscpu
+The output of this command is: 
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+Address sizes:       48 bits physical, 48 bits virtual
+CPU(s):              16
+On-line CPU(s) list: 0-15
+Thread(s) per core:  2
+Core(s) per socket:  4
+Socket(s):           2
+NUMA node(s):        4
+Vendor ID:           AuthenticAMD
+CPU family:          21
+Model:               2
+Model name:          AMD Opteron(tm) Processor 6320
+Stepping:            0
+CPU MHz:             1502.587
+CPU max MHz:         2800.0000
+CPU min MHz:         1400.0000
+BogoMIPS:            5600.13
+Virtualization:      AMD-V
+L1d cache:           16K
+L1i cache:           64K
+L2 cache:            2048K
+L3 cache:            6144K
+NUMA node0 CPU(s):   0-3
+NUMA node1 CPU(s):   4-7
+NUMA node2 CPU(s):   8-11
+NUMA node3 CPU(s):   12-15
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid amd_dcm aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb cpb hw_pstate ssbd ibpb vmmcall bmi1 arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold
+[1;91;86m[charlie][1;91;230m • [0mexit
+exit
+
+Script done on 2020-12-12 21:51:52-05:00 [COMMAND_EXIT_CODE="0"]

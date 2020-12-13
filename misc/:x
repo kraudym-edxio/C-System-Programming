@@ -20,7 +20,7 @@ int main (int argc, char *argv[]) {
 
 	servAdd.sin_family = AF_INET;  
 	servAdd.sin_addr.s_addr = INADDR_ANY;  
-	servAdd.sin_port = 50000;
+	servAdd.sin_port = 7777;
 	
 	bind(sd,(struct sockaddr*)&servAdd,sizeof(servAdd));  
 
@@ -30,10 +30,7 @@ int main (int argc, char *argv[]) {
 		
 		len = sizeof(cliAdd);
 		cd = accept(sd, (struct sockaddr *) &cliAdd, &len);  
-	
-		fprintf(stderr, "Client connected successfully\n");
-		fprintf(stderr, "The command is: lscpu\n");	
-
+		
 		if (fork() == 0)
 			child(cd);  
 		
@@ -47,21 +44,24 @@ void child (int cd) {
 
 	char line[250];
 
+	fprintf(stderr, "Client connected successfully\n");
+	fprintf(stderr, "The command is: lscpu\n");	
+
 	//write(cd, buffer, strlen(buffer) + 1);
 
-//	while (1) {
-//	
-//		fprintf(stderr, "Enter a line to send to client\n");  
-//		scanf("%s", line);
-//		write(cd, line, strlen(line)+1);  
-//	
-//	if (!read(cd, line, 255)){  
-//			close(cd);
-//			exit(0);
-//		}
-//	
-//		fprintf(stderr, "Client sent back: %s\n", line);
-//
-//	}
+	while (1) {
+	
+		fprintf(stderr, "Enter a line to send to client\n");  
+		scanf("%s", line);
+		write(cd, line, strlen(line)+1);  
+	
+		if (!read(cd, line, 255)){  
+			close(cd);
+			exit(0);
+		}
+	
+		fprintf(stderr, "Client sent back: %s\n", line);
+
+	}
 
 }

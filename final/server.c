@@ -8,7 +8,7 @@
 #include <arpa/inet.h>
 
 
-int main(int argc, char *argv[]){
+int main (int argc, char *argv[]){
 
 	char buffer[100] = "Hello, here is my message\n";  
 
@@ -21,29 +21,25 @@ int main(int argc, char *argv[]){
 	sd = socket(AF_INET, SOCK_STREAM, 0);
   
 	servAdd.sin_family = AF_INET;  
-	servAdd.sin_addr.s_addr = inet_addr(INADDR_ANY); //Or use INADDR_ANY
-	//INADDR_ANY allows your program to work without
-	//knowing the IP address of the machine it was running on  
+	servAdd.sin_addr.s_addr = inet_addr("137.207.82.53"); // or use INADDR_ANY;
 
-	servAdd.sin_port = 7777; // a port number
+	servAdd.sin_port = 50000; // a port number
 
-	//All steps above are for calling bind.
 	bind(sd,(struct sockaddr*)&servAdd,sizeof(servAdd));  
 
 	listen(sd, 5);
 
-	while(1) {
+	while(1){
 
 		len = sizeof(cliAdd);
 
-		client = accept(sd,(struct sockaddr*)&cliAdd, &len);  //accept (sd, NULL, NULL);
+		client=accept(sd,(struct sockaddr*)&cliAdd, &len);  //accept (sd, NULL, NULL);
 
 		write(client, buffer, strlen(buffer) + 1);  
 
 		close(client);
-
 		break;
-
 	}
-
 }
+
+

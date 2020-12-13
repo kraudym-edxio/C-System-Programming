@@ -6,9 +6,8 @@
 #include<stdlib.h>
 #include<unistd.h>
 
-
-
-int main(int argc, char *argv[]){  
+int main (int argc, char *argv[]) {  
+	
 	char buffer[100];
 	int csd;  socklen_t len;
 	
@@ -18,21 +17,19 @@ int main(int argc, char *argv[]){
 
 	servAdd.sin_family = AF_INET;  
 	servAdd.sin_addr.s_addr = inet_addr(argv[1]);  
-	servAdd.sin_port = 7777;
+	servAdd.sin_port = 50000;
 
 	connect(csd, (struct sockaddr *) &servAdd,  sizeof(servAdd));
 
-	while(1){
-		read(csd, buffer, 255);
-		fprintf(stderr, "Serverâ€™s message: %s\n", buffer);  
-		fprintf(stderr, "Enter a line to send server\n");  
-		scanf("%s", buffer);
-		if(buffer[0]=='$'){ 
-                        close(csd);  
-			exit(0);
-		}
-		write(csd, buffer, strlen(buffer)+1);
-	}
+	//Prompt user to enter a command (lscpu)
+	fprintf(stderr, "Please help me execute this command: ");
+	scanf("%s", buffer);	
+
+	write(csd, buffer, strlen(buffer) + 1);
+
+	//Display output and termination message	
+	fprintf(stderr, "The output of this command is: \n");
+	execlp("lscpu", "lscpu", (char *)NULL);
+	fprintf(stderr, "Thank you. Client terminated.\n");
+
 }	
-
-

@@ -1,0 +1,7 @@
+Script started on 2020-12-12 21:51:36-05:00 [TERM="xterm-256color" TTY="/dev/pts/57" COLUMNS="94" LINES="34"]
+[1;91;86m[charlie][1;91;230m • [0m./server2
+^C
+[1;91;86m[charlie][1;91;230m • [0mexit
+exit
+
+Script done on 2020-12-12 21:51:58-05:00 [COMMAND_EXIT_CODE="130"]
